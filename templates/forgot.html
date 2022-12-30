@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Page</title>
+    <title>Forgot Password</title>
     <style>
       html {
         height: 100%;
@@ -181,25 +181,27 @@
 
       .subBtn{
         background-color: transparent;
+      } 
+
+      a{
+        text-decoration: none;
+        color: #fff;
+        font-size: small;
+      }
+
+      a:hover{
+        color: #03e9f4;
       }
     </style>
   </head>
 
   <body>
     <div class="login-box">
-      <h2>Signup</h2>
-      <form method="post" action="registration">
+      <h2>Reset Password</h2>
+      <form method="post" action="forgot">
         {% csrf_token %}
         <div class="user-box">
-          <input type="text" name="firstName" required="" />
-          <label>First Name</label>
-        </div>
-        <div class="user-box">
-          <input type="text" name="lastName" required="" />
-          <label>Last Name</label>
-        </div>
-        <div class="user-box">
-          <input type="text" name="userName" required="" />
+          <input type="text" name="username" required="" />
           <label>Username</label>
         </div>
         <div class="user-box">
@@ -208,19 +210,18 @@
         </div>
         <div class="user-box">
           <input type="password" name="password1" required="" />
-          <label>Password</label>
+          <label>New Password</label>
         </div>
         <div class="user-box">
           <input type="password" name="password2" required="" />
-          <label>Confirm Password</label>
+          <label>ReEnter Password</label>
         </div>
-          <input type="submit" class="subBtn">
+        <input type="submit" class="subBtn"/><br><br>
+        <!-- <a href="forgot">Forgot Password</a> -->
       </form><br>
-      {% for message in messages %}
-    <h2>{{message}}</h2>
-    {%endfor%}
+      {%for message in messages%}
+      <h2>{{message}}</h2>
+      {%endfor%}
     </div>
-
-    
   </body>
 </html>

@@ -182,6 +182,16 @@
       .subBtn{
         background-color: transparent;
       } 
+
+      a{
+        text-decoration: none;
+        color: #fff;
+        font-size: small;
+      }
+
+      a:hover{
+        color: #03e9f4;
+      }
     </style>
   </head>
 
@@ -198,10 +208,11 @@
           <input type="password" name="password" required="" />
           <label>Password</label>
         </div>
-        <input type="submit" class="subBtn"/>
-      </form>
+        <input type="submit" class="subBtn"/><br><br>
+        <a href="forgot">Forgot Password</a>
+      </form><br>
       {%for message in messages%}
-      <h3>{{message}}</h3>
+      <h2>{{message}}</h2>
       {%endfor%}
     </div>
   </body>
